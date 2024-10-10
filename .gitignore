@@ -15,6 +15,7 @@ cmake/*
 !*CMakeLists.txt
 !.travis.yml
 !.gitignore
+!third_party/CMakeLists.txt
 
 # Unignore source code directories
 !benchmark/

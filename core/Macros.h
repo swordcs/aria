@@ -5,6 +5,7 @@
 #pragma once
 
 #include "glog/logging.h"
+#include <gflags/gflags.h>  
 #include <boost/algorithm/string/split.hpp>
 
 DEFINE_string(servers, "127.0.0.1:10010",

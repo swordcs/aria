@@ -1,6 +1,7 @@
 #include "benchmark/tpcc/Database.h"
 #include "core/Coordinator.h"
 #include "core/Macros.h"
+#include <gflags/gflags.h>  
 
 DEFINE_bool(operation_replication, false, "use operation replication");
 DEFINE_string(query, "neworder", "tpcc query, mixed, neworder, payment");
@@ -14,7 +15,7 @@ int main(int argc, char *argv[]) {
 
   google::InitGoogleLogging(argv[0]);
   google::InstallFailureSignalHandler();
-  google::ParseCommandLineFlags(&argc, &argv, true);
+  gflags::ParseCommandLineFlags(&argc, &argv, true);
 
   aria::tpcc::Context context;
   SETUP_CONTEXT(context);

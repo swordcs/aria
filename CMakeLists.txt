@@ -6,7 +6,10 @@ project(aria)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -Wall -Wno-long-long -Wno-unused-variable -Wno-variadic-macros -pedantic -O2")
 set(CMAKE_CXX_STANDARD 14)
 
-find_library(jemalloc_lib jemalloc) # jemalloc 5.0
+find_library(jemalloc_lib jemalloc hint ${CMAKE_SOURCE_DIR}/third_party/jemalloc/build/lib) # jemalloc 5.0
+find_library(boost_lib boost hint ${CMAKE_SOURCE_DIR}/third_party/boost/build/lib) 
+
+add_subdirectory(third_party)
 
 # additional target to perform clang-format run, requires clang-format
 
@@ -23,6 +26,13 @@ add_custom_target(
 )
 
 include_directories(${CMAKE_SOURCE_DIR})
+include_directories(${CMAKE_SOURCE_DIR}/third_party/boost/build/include)
+# set(gflags_DIR ${CMAKE_SOURCE_DIR}/third_party/gflags/build/lib/cmake/gflags)
+# set(glog_DIR ${CMAKE_SOURCE_DIR}/third_party/glog/build/lib/cmake/glog)
+# # find_package(gflags REQUIRED)
+# # find_package(glog REQUIRED)
+
+
 
 file(GLOB_RECURSE COMMON_SOURCE_FILES common/*.cpp)
 add_library(common STATIC ${COMMON_SOURCE_FILES})
