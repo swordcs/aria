@@ -27,11 +27,6 @@ add_custom_target(
 
 include_directories(${CMAKE_SOURCE_DIR})
 include_directories(${CMAKE_SOURCE_DIR}/third_party/boost/build/include)
-# set(gflags_DIR ${CMAKE_SOURCE_DIR}/third_party/gflags/build/lib/cmake/gflags)
-# set(glog_DIR ${CMAKE_SOURCE_DIR}/third_party/glog/build/lib/cmake/glog)
-# # find_package(gflags REQUIRED)
-# # find_package(glog REQUIRED)
-
 
 
 file(GLOB_RECURSE COMMON_SOURCE_FILES common/*.cpp)
