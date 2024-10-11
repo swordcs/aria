@@ -15,6 +15,7 @@ done
 if [ "$check_status" -eq 1 ]; then
     if grep -qsi "Ubuntu" /etc/os-release; then
         echo "Installing build-essential and cmake..."
+        sudo apt update --fix-missing
         sudo apt install -y build-essential cmake
     else
         echo "Make sure you have a C++ compiler and CMake installed!"
