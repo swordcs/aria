@@ -102,7 +102,11 @@ fi
 echo "jemalloc is installed."
 
 echo "All dependencies are satisfied, start compiling..."
-rm -rf build
-mkdir build && cd build || exit 1
-cmake ..
+
+if [! -d "$root_dir/build" ]]; then
+    mkdir "$root_dir/build"
+fi
+
+cd build || exit 1
+cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug
 make -j
