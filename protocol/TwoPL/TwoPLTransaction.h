@@ -134,6 +134,7 @@ public:
 
       const TwoPLRWKey &readKey = readSet[i];
       bool success, remote;
+      // atomic operations here
       auto tid = lock_request_handler(
           readKey.get_table_id(), readKey.get_partition_id(), i,
           readKey.get_key(), readKey.get_value(),
