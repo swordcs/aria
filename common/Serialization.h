@@ -7,7 +7,7 @@
 #include <cstring>
 #include <string>
 
-#include "StringPiece.h"
+#include "common/StringPiece.h"
 
 namespace aria {
 template <class T> class Serializer {

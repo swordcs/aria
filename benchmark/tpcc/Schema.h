@@ -6,8 +6,8 @@
 
 #include "common/ClassOf.h"
 #include "common/FixedString.h"
-#include "common/Hash.h"
 #include "common/Serialization.h"
+#include "common/math/hash.h"
 #include "core/SchemaDef.h"
 
 // table definition for tpcc

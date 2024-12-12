@@ -20,7 +20,7 @@ See the Mulan PSL v2 for more details. */
 #include <string.h>
 #include <sys/time.h>
 
-#include "common/defs.h"
+#include "common/Defs.h"
 #include "common/lang/string.h"
 #include "common/lang/map.h"
 #include "common/lang/set.h"

@@ -11,7 +11,7 @@
 #include "benchmark/tpcc/Schema.h"
 #include "benchmark/tpcc/Storage.h"
 #include "common/Operation.h"
-#include "common/Time.h"
+#include "common/time/time.h"
 #include "core/Defs.h"
 #include "core/Partitioner.h"
 #include "core/Table.h"

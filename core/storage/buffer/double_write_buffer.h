@@ -16,8 +16,9 @@ See the Mulan PSL v2 for more details. */
 
 #include "common/lang/mutex.h"
 #include "common/lang/unordered_map.h"
+#include "common/types.h"
 #include "common/rc.h"
-#include "common/buffer/page.h"
+#include "storage/buffer/page.h"
 
 class DiskBufferPool;
 struct DoubleWritePage;

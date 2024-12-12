@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "SpinLock.h"
+#include "common/SpinLock.h"
 #include <atomic>
 #include <glog/logging.h>
 #include <unordered_map>

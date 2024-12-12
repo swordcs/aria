@@ -24,7 +24,7 @@ See the Mulan PSL v2 for more details. */
 #include <string>
 #include <typeinfo>
 
-#include "common/defs.h"
+#include "common/Defs.h"
 #include "common/lang/vector.h"
 #include "common/lang/iostream.h"
 #include "common/lang/sstream.h"

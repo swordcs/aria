@@ -6,9 +6,9 @@
 
 #include "common/ClassOf.h"
 #include "common/Encoder.h"
-#include "common/HashMap.h"
-#include "common/MVCCHashMap.h"
 #include "common/StringPiece.h"
+#include "common/lang/hashmap.h"
+#include "common/lang/mvcc_hashmap.h"
 #include <memory>
 
 #include "core/Context.h"

@@ -5,7 +5,7 @@
 #pragma once
 
 #include "common/FastSleep.h"
-#include "common/Percentile.h"
+#include "common/math/percentile.h"
 #include "core/ControlMessage.h"
 #include "core/Defs.h"
 #include "core/Delay.h"

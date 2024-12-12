@@ -8,10 +8,10 @@
 #include <iostream>
 #include <string>
 
-#include "ClassOf.h"
-#include "Hash.h"
-#include "Serialization.h"
-#include "StringPiece.h"
+#include "common/ClassOf.h"
+#include "common/Serialization.h"
+#include "common/StringPiece.h"
+#include "common/math/hash.h"
 
 namespace aria {
 

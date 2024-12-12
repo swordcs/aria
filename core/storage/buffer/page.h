@@ -14,21 +14,16 @@ See the Mulan PSL v2 for more details. */
 
 #pragma once
 
+#include "common/types.h"
 #include <stdint.h>
 
-using PageNum = int32_t;
-
 using TrxID = int32_t;
-
-using CheckSum = uint32_t;
-
-using LSN = int64_t;
 
 static constexpr PageNum BP_INVALID_PAGE_NUM = -1;
 
 static constexpr PageNum BP_HEADER_PAGE = 0;
 
-static constexpr const int BP_PAGE_SIZE = (1 << 13);
+static constexpr const int BP_PAGE_SIZE      = (1 << 13);
 static constexpr const int BP_PAGE_DATA_SIZE = (BP_PAGE_SIZE - sizeof(PageNum) - sizeof(LSN) - sizeof(CheckSum));
 
 /**
@@ -37,7 +32,7 @@ static constexpr const int BP_PAGE_DATA_SIZE = (BP_PAGE_SIZE - sizeof(PageNum) -
  */
 struct Page
 {
-  LSN lsn;
+  LSN      lsn;
   CheckSum check_sum;
-  char data[BP_PAGE_DATA_SIZE];
+  char     data[BP_PAGE_DATA_SIZE];
 };

@@ -7,8 +7,8 @@
 #include <iostream>
 #include <string>
 
-#include "Serialization.h"
-#include "StringPiece.h"
+#include "common/Serialization.h"
+#include "common/StringPiece.h"
 
 namespace aria {
 class Encoder {

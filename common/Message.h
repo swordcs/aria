@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "StringPiece.h"
 #include "common/MessagePiece.h"
+#include "common/StringPiece.h"
 #include <chrono>
 #include <string>
 
