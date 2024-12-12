@@ -192,7 +192,7 @@ extern Log *g_log;
       int usec = (int)tv.tv_usec;                                          \
       snprintf(sz_head,                                                    \
           LOG_HEAD_SIZE,                                                   \
-          "%04d-%02d-%02d %02d:%02d:%02u.%06d pid:%u tid:%llx ctx:%lx",    \
+          "%04d-%02d-%02d %02d:%02d:%02u.%06d pid:%u tid:%x ctx:%lx",    \
           p->tm_year + 1900,                                               \
           p->tm_mon + 1,                                                   \
           p->tm_mday,                                                      \

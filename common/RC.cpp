@@ -12,7 +12,7 @@ See the Mulan PSL v2 for more details. */
 // Created by Wangyunlai on 2021/5/14.
 //
 
-#include "common/rc.h"
+#include "common/RC.h"
 
 const char *strrc(RC rc)
 {

@@ -1,17 +1,26 @@
 cmake_minimum_required(VERSION 3.2)
 project(aria)
 
-set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -Wall -Wno-long-long -Wno-unused-variable -Wno-variadic-macros -pedantic")
-# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -Wall -Wno-long-long -Wno-unused-variable -Wno-variadic-macros -pedantic -O2")
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
+
+IF (DEBUG)
+    MESSAGE(STATUS "DEBUG has been set as TRUE")
+    set(CMAKE_BUILD_TYPE Debug)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -Wall -Wno-long-long -Wno-unused-variable -Wno-variadic-macros -Wno-error=sign-compare")
+ELSEIF (NOT DEFINED ENV{DEBUG})
+    MESSAGE(STATUS "DEBUG has not been defined, setting to DEBUG")
+    set(CMAKE_BUILD_TYPE Debug)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -Wall -Wno-long-long -Wno-unused-variable -Wno-variadic-macros -Wno-error=sign-compare")
+ELSE()
+    MESSAGE(STATUS "RELEASE as build type")
+    set(CMAKE_BUILD_TYPE Release)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -Wall -Wno-long-long -Wno-unused-variable -Wno-variadic-macros -pedantic -O2")
+ENDIF(DEBUG)
 
 find_library(jemalloc_lib jemalloc hint ${CMAKE_SOURCE_DIR}/third_party/jemalloc/build/lib) # jemalloc 5.0
 find_library(boost_lib boost hint ${CMAKE_SOURCE_DIR}/third_party/boost/build/lib) 
 
 add_subdirectory(third_party)
-
-# additional target to perform clang-format run, requires clang-format
 
 # get all project files
 file(GLOB_RECURSE ALL_SOURCE_FILES benchmark/*.h common/*.h core/*.h protocol/*.h bench*.cpp)
