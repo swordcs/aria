@@ -187,6 +187,7 @@ function do_build
 function do_clean
 {
   echo "clean build_* dirs"
+  rm -f build
   find . -maxdepth 1 -type d -name 'build_*' | xargs rm -rf
 }
 
